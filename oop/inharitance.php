@@ -74,5 +74,6 @@ $produk2 = new Game("Uncharted", "Neil Druckmann", "Sony Computer", 40000, 0, 50
 echo $produk1->getInfoProduk();
 echo "<br>";
 echo $produk2->getInfoProduk();
+echo "<br>";
 
 ?>
