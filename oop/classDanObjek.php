@@ -1,15 +1,15 @@
 <?php
 
 // cara membuat kelas
-class buku
+class books
 {
 
 
 }
 
 // cara membuat objek
-$buku1 = new buku();
-$buku2 = new buku();
+$buku1 = new books();
+$buku2 = new books();
 
 // menampilkan data objek ke layar
 var_dump($buku1);

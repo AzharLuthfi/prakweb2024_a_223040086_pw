@@ -1,6 +1,6 @@
 <?php
 
-class buku
+class books
 {
 
     public $judul = "judul",
@@ -18,7 +18,7 @@ class buku
 }
 
 // // buat objek buku
-$buku1 = new buku();
+$buku1 = new books();
 
 // // mengisi properti class buku
 $buku1->judul = "laskar pelangi";
