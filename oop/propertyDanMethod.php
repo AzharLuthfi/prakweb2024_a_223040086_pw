@@ -27,6 +27,6 @@ $buku1->penerbit = "Puspa Indah";
 $buku1->harga = "200000";
 
 // // menmpilkan data dilayar
-var_dump($buku1)
+var_dump($buku1);
 
-    ?>
+?>
