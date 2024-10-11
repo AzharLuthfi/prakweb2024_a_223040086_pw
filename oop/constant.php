@@ -1,6 +1,5 @@
-@@ -0,0 +1,45 @@
 <?php
-define('NAMA', 'azhar utama');
+define('NAMA', 'azhar Luthfiadi');
 echo NAMA;
 echo "<br>";
 
@@ -10,7 +9,7 @@ echo UMUR;
 echo "<br>";
 class Coba
 {
-    const NAMA = 'azhar utama';
+    const NAMA = 'azhar Luthfiadi';
 }
 
 echo Coba::NAMA;
