@@ -1,0 +1,9 @@
+<!-- 
+-- Options -Indexes --
+jika ada user yang buka folder app dan folder folde di dalamnya
+selama di folder itu tidak ada file index maka jangan tampilkan
+isi foldernya (blok Access nya)
+
+-->
+
+Options -Indexes
