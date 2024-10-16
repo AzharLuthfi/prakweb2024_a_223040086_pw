@@ -2,11 +2,42 @@
 
 class App
 {
+    protected $controller = "Home";
+    protected $method = "index";
+    protected $params = [];
 
     public function __construct()
     {
         $url = $this->parseURL();
-        var_dump($url);
+
+        // Controller
+        if (isset($url[0]) && file_exists('../app/controllers/' . $url[0] . '.php')) {
+            $this->controller = $url[0];
+            unset($url[0]);
+        }
+
+        require_once "../app/controllers/" . $this->controller . '.php';
+        if (!class_exists($this->controller)) {
+            // Tampilkan halaman 404 atau pesan kesalahan
+            die("Controller <strong>{$this->controller}</strong> tidak ditemukan.");
+        }
+        $this->controller = new $this->controller();
+
+        // Method
+        if (isset($url[1])) {
+            if (method_exists($this->controller, $url[1])) {
+                $this->method = $url[1];
+                unset($url[1]);
+            }
+        }
+
+        // Parameter
+        if (!empty($url)) {
+            $this->params = array_values($url);
+        }
+
+        // Jalankan controller dan method, serta kirimkan params jika ada
+        call_user_func_array([$this->controller, $this->method], $this->params);
     }
 
     public function parseURL()
@@ -17,5 +48,6 @@ class App
             $url = explode('/', $url);
             return $url;
         }
+        return []; // Kembalikan array kosong jika 'url' tidak ada
     }
 }
