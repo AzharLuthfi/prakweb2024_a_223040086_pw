@@ -5,18 +5,21 @@
             <h3>Daftar Mahasiswa</h3>
 
 
-            <?php foreach ($data['mhs'] as $mhs): ?>
-
-                <ul>
-                    <li><?php echo $mhs['nama']; ?></li>
-                    <li><?php echo $mhs['nrp']; ?></li>
-                    <li><?php echo $mhs['email']; ?></li>
-                    <li><?php echo $mhs['jurusan']; ?></li>
-
-                </ul>
 
 
-            <?php endforeach; ?>
+            <ul class="list-group">
+                <?php foreach ($data['mhs'] as $mhs): ?>
+                    <li class="list-group-item list-group-item d-flex justify-content-between align-items-start">
+                        <?php echo $mhs['nama'] ?>
+                        <a href=" <?php echo BASEURL; ?>/mahasiswa/detail/<?php echo $mhs['id']; ?>"
+                            class="badge bg-primary rounded-pill">detail</a>
+
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+
+
+
 
 
         </div>
