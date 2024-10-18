@@ -7,7 +7,8 @@
     <div class="row">
         <div class="col-lg-6">
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary mb-2" data-bs-toggle="modal" data-bs-target="#formModal">
+            <button type="button" class="btn btn-primary mb-2 tombolTambahData" data-bs-toggle="modal"
+                data-bs-target="#formModal">
                 Tambah Data Mahasiswa
             </button>
             <h3>Daftar Mahasiswa</h3>
@@ -18,6 +19,10 @@
                         <?php echo $mhs['nama'] ?>
                         <a href=" <?php echo BASEURL; ?>/mahasiswa/hapus/<?php echo $mhs['id']; ?>"
                             class="badge bg-danger float-end ms-1 p-2" onclick="return confirm('yakin?');">hapus</a>
+
+                        <a href=" <?php echo BASEURL; ?>/mahasiswa/ubah/<?php echo $mhs['id']; ?>"
+                            class="badge bg-success float-end ms-1 p-2 tampilModalUbah" data-bs-toggle="modal"
+                            data-bs-target="#formModal" data-id="<?php echo $mhs['id'] ?>">ubah</a>
 
                         <a href=" <?php echo BASEURL; ?>/mahasiswa/detail/<?php echo $mhs['id']; ?>"
                             class="badge bg-primary float-end ms-1 p-2">detail</a>
@@ -39,11 +44,12 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="judulModal">Tambah Data Mahasiswa</h5>
+                <h5 class="modal-title" id="formModalLabel">Tambah Data Mahasiswa</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <form action="<?php echo BASEURL; ?>/mahasiswa/tambah" method="post">
+                    <input type="hidden" name="id" id="id">
                     <div class="mb-3">
                         <label for="nama" class="form-label">Nama</label>
                         <input type="text" class="form-control" id="nama" name="nama">
