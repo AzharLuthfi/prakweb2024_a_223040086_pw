@@ -4,13 +4,31 @@
             <?php Flasher::flash() ?>
         </div>
     </div>
-    <div class="row">
+
+    <div class="row mb-2">
         <div class="col-lg-6">
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary mb-2 tombolTambahData" data-bs-toggle="modal"
                 data-bs-target="#formModal">
                 Tambah Data Mahasiswa
             </button>
+        </div>
+    </div>
+
+    <div class="row mb-2">
+        <div class="col-lg-6">
+            <form action="<?php echo BASEURL; ?>/mahasiswa/cari" method="POST">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Cari Mahasiswa" name="keyword" id="keyword"
+                        autocomplete="off">
+                    <button class="btn btn-outline-primary" type="submit" id="tombolCari">Cari</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
             <h3>Daftar Mahasiswa</h3>
 
             <ul class="list-group">

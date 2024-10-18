@@ -70,4 +70,19 @@ class Mahasiswa_model
         return $this->db->rowCount();
     }
 
+    public function cariDataMahasiswa()
+    {
+        // Periksa apakah $_POST['keyword'] sudah diset
+        if (isset($_POST['keyword']) && !empty($_POST['keyword'])) {
+            $keyword = $_POST['keyword'];
+            $query = "SELECT * FROM mahasiswa WHERE nama LIKE :keyword";
+            $this->db->query($query);
+            $this->db->bind("keyword", "%$keyword%");
+            return $this->db->resultSet();
+        } else {
+            // Jika keyword tidak diset, kembalikan array kosong atau penanganan lain
+            return [];
+        }
+    }
+
 }
