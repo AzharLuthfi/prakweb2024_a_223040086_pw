@@ -37,5 +37,16 @@ class Mahasiswa_model
 
         return $this->db->rowCount();
     }
+    public function hapusDataMahasiswa($id)
+    {
+        // Kolom id tidak perlu dimasukkan jika auto-increment
+        $query = "DELETE FROM mahasiswa WHERE id = :id";
+        $this->db->query($query);
+        $this->db->bind("id", $id);
+
+        $this->db->execute();
+
+        return $this->db->rowCount();
+    }
 
 }
